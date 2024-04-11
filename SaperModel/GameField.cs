@@ -128,7 +128,7 @@ namespace SaperModel
             {
                 GameId = gameId,
                 Completed = completed,
-                
+
             };
         }
     }
