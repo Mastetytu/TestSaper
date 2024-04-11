@@ -12,10 +12,10 @@ namespace SaperModel
         [Required]
         public Guid GameId { get; set; }
 
-        //[Range(0, 29, ErrorMessage = "Колонка проверяемой ячейки должна быть от 0 до 29")]
+        [Range(0, 29, ErrorMessage = "Колонка проверяемой ячейки должна быть от 0 до 29")]
         public int Col { get; set; }
 
-        //[Range(0, 29, ErrorMessage = "Ряд проверяемой ячейки должна быть от 0 до 29")]
+        [Range(0, 29, ErrorMessage = "Ряд проверяемой ячейки должна быть от 0 до 29")]
         public int Row { get; set; }
         public bool Completed { get; set; }
 
