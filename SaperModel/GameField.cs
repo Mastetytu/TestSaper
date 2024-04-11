@@ -23,7 +23,7 @@ namespace SaperModel
             InitializeRelations();
         }
 
-        private void InitializeField()
+        public void InitializeField()
         {
             field = new List<List<Cell>>();
             for (int i = 0; i < config.Height; i++)
@@ -37,7 +37,7 @@ namespace SaperModel
             }
         }
 
-        private void CreateMines()
+        public void CreateMines()
         {
             int count = config.MinesCount;
             while (count != 0)
@@ -53,7 +53,7 @@ namespace SaperModel
             }
         }
 
-        private void InitializeRelations()
+        public void InitializeRelations()
         {
             IEnumerable<Cell> bombs = GetAllCells().Where(c => c.IsBomb());
             IEnumerable<(int, int)> neighbors = bombs.SelectMany(b => b.GetNeighbors()).Where(n => n.Item1 >= 0 && n.Item1 < config.Height && n.Item2 >= 0 && n.Item2 < config.Width);
@@ -86,13 +86,13 @@ namespace SaperModel
             }
         }
 
-        private bool IsComplete()
+        public bool IsComplete()
         {
             int count = GetAllCells().Count(c => c.IsPushed());
             return count + config.MinesCount == config.Height * config.Width;
         }
 
-        private void CheckIfSafeCellsAround(Cell cell)
+        public void CheckIfSafeCellsAround(Cell cell)
         {
             foreach ((int row, int col) in cell.GetNeighbors())
             {
@@ -112,12 +112,12 @@ namespace SaperModel
             }
         }
 
-        private Cell GetCell(int row, int col)
+        public Cell GetCell(int row, int col)
         {
             return field[row][col];
         }
 
-        private IEnumerable<Cell> GetAllCells()
+        public IEnumerable<Cell> GetAllCells()
         {
             return field.SelectMany(row => row);
         }

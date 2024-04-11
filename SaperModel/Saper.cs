@@ -8,7 +8,7 @@ namespace SaperModel
 {
     public class Saper
     {
-        private Dictionary<Guid, GameField> games = new Dictionary<Guid, GameField>();
+        public Dictionary<Guid, GameField> games = new Dictionary<Guid, GameField>();
 
         public GameInfoResponse CreateNewGame(NewGameRequest parameters)
         {
