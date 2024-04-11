@@ -7,7 +7,7 @@ namespace TestSaper.Controllers
     [Route("[controller]")]
     public class SaperControl : Controller
     {
-        private readonly SaperModel.Saper _game;
+        public readonly SaperModel.Saper _game;
 
         public SaperControl(SaperModel.Saper game)
         {
